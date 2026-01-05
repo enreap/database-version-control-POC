@@ -9,7 +9,7 @@
             CREATE DATABASE IF NOT EXISTS pocdb;
             CREATE USER IF NOT EXISTS 'pocuser'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
             <!-- GRANT ALL PRIVILEGES ON pocdb.* TO 'pocuser'@'ip-172-31-41-46.ec2.internal'; -->
-            GRANT ALL PRIVILEGES ON *.* TO 'mariyababu'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON *.* TO 'pocuser'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
 
             <!-- CREATE USER IF NOT EXISTS 'pocuser'@'localhost' IDENTIFIED BY 'Db1@12345';
             GRANT ALL PRIVILEGES ON pocdb.* TO 'pocuser'@'localhost'; -->
