@@ -49,6 +49,15 @@
     <changeSet id="006-database2-update-data" author="dev">
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
+        <!-- Execute external SQL for tables and initial data -->
+    <changeSet id="007-pocdb-tables" author="dev">
+        <sqlFile path="../sql/pocdb/create_tables.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+  
+    <!-- Execute external SQL to update some table data -->
+    <changeSet id="008-pocdb-update-data" author="dev">
+        <sqlFile path="../sql/pocdb/update_data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
      
   
 
