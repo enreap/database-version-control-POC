@@ -4,16 +4,16 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.21.xsd">
 
     <!-- Create db1 and user -->
-    <changeSet id="001-create-database1" author="dev">
+    <changeSet id="001-create-pocdb" author="dev">
         <sql>
-            CREATE DATABASE IF NOT EXISTS database1;
-            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
+            CREATE DATABASE IF NOT EXISTS pocdb;
+            CREATE USER IF NOT EXISTS 'pocuser'@'%' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON pocuser.* TO 'pocdb'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'database1'@'%';
-            DROP DATABASE IF EXISTS database1;
+            DROP USER IF EXISTS 'pocuser'@'%';
+            DROP DATABASE IF EXISTS pocdb;
         </rollback>
     </changeSet>
 
