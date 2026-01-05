@@ -7,7 +7,7 @@
     <changeSet id="001-create-database1" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS database1;
-            CREATE USER IF NOT EXISTS 'database'@'%' IDENTIFIED BY 'Db1@12345';
+            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
             GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
             FLUSH PRIVILEGES;
         </sql>
@@ -58,18 +58,7 @@
     <changeSet id="008-database1-update-data" author="dev">
         <sqlFile path="../sql/database1/update_data1.sql" relativeToChangelogFile="true"/>
     </changeSet>
-    <changeSet id="009-create-database1" author="dev">
-        <sql>
-            CREATE DATABASE IF NOT EXISTS database1;
-            CREATE USER IF NOT EXISTS 'database'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
-            FLUSH PRIVILEGES;
-        </sql>
-        <rollback>
-            DROP USER IF EXISTS 'database1'@'%';
-            DROP DATABASE IF EXISTS database1;
-        </rollback>
-    </changeSet>
+   
   
 
 </databaseChangeLog>
