@@ -7,12 +7,12 @@
     <changeSet id="001-create-pocdb" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS pocdb;
-            CREATE USER IF NOT EXISTS 'pocuser'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON pocuser.* TO 'pocdb'@'%';
+            CREATE USER IF NOT EXISTS 'pocuser'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON pocuser.* TO 'pocdb'@'ip-172-31-41-46.ec2.internal';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'pocuser'@'%';
+            DROP USER IF EXISTS 'pocuser'@'ip-172-31-41-46.ec2.internal';
             DROP DATABASE IF EXISTS pocdb;
         </rollback>
     </changeSet>
