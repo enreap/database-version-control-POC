@@ -49,13 +49,5 @@
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
   
-        <!-- Execute external SQL for tables and initial data -->
-    <changeSet id="007-database1-tables" author="dev">
-        <sqlFile path="../sql/database1/create_tables.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 
-    <!-- Execute external SQL to update some table data -->
-    <changeSet id="008-database1-update-data" author="dev">
-        <sqlFile path="../sql/database1/update_data.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 </databaseChangeLog>
