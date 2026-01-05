@@ -30,8 +30,8 @@
             <!-- GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal'; -->
             GRANT ALL PRIVILEGES ON *.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
 
-            <!-- CREATE USER IF NOT EXISTS 'pocuser1'@'localhost' IDENTIFIED BY 'Db1@12345';
-            <!-- GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'localhost'; --> -->
+           <!-- CREATE USER IF NOT EXISTS 'pocuser1'@'localhost' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'localhost';  -->
 
             FLUSH PRIVILEGES;
         </sql>
