@@ -4,40 +4,16 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.21.xsd">
 
     <!-- Create db1 and user -->
-    <changeSet id="001-create-pocdb" author="dev">
+    <changeSet id="001-create-database1" author="dev">
         <sql>
-            CREATE DATABASE IF NOT EXISTS pocdb;
-            CREATE USER IF NOT EXISTS 'pocuser'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
-            <!-- GRANT ALL PRIVILEGES ON pocdb.* TO 'pocuser'@'ip-172-31-41-46.ec2.internal'; -->
-            GRANT ALL PRIVILEGES ON *.* TO 'pocuser'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
-
-            <!-- CREATE USER IF NOT EXISTS 'pocuser'@'localhost' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON pocdb.* TO 'pocuser'@'localhost'; -->
-
+            CREATE DATABASE IF NOT EXISTS database1;
+            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'pocuser'@'localhost';
-            DROP DATABASE IF EXISTS pocdb;
-        </rollback>
-    </changeSet>
-
-
-    <changeSet id="010-create-pocdb1" author="dev">
-        <sql>
-            CREATE DATABASE IF NOT EXISTS pocdb1;
-            CREATE USER IF NOT EXISTS 'pocuser1'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
-            <!-- GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal'; -->
-            GRANT ALL PRIVILEGES ON *.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
-
-           <!-- CREATE USER IF NOT EXISTS 'pocuser1'@'localhost' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'localhost';  -->
-
-            FLUSH PRIVILEGES;
-        </sql>
-        <rollback>
-            DROP USER IF EXISTS 'pocuser1'@'localhost';
-            DROP DATABASE IF EXISTS pocdb1;
+            DROP USER IF EXISTS 'database1'@'%';
+            DROP DATABASE IF EXISTS database1;
         </rollback>
     </changeSet>
 
@@ -72,16 +48,5 @@
     <changeSet id="006-database2-update-data" author="dev">
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
-        <!-- Execute external SQL for tables and initial data -->
-    <changeSet id="007-pocdb-tables" author="dev">
-        <sqlFile path="../sql/pocdb/create_tables.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-  
-    <!-- Execute external SQL to update some table data -->
-    <changeSet id="008-pocdb-update-data" author="dev">
-        <sqlFile path="../sql/pocdb/update_data.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-     
-  
 
 </databaseChangeLog>
