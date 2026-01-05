@@ -23,7 +23,7 @@
     </changeSet>
 
 
-        <changeSet id="010-create-pocdb1" author="dev">
+    <changeSet id="010-create-pocdb1" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS pocdb1;
             CREATE USER IF NOT EXISTS 'pocuser1'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
