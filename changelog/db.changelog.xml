@@ -59,16 +59,16 @@
         <sqlFile path="../sql/database1/update_data1.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="009-create-database1" author="dev">
+    <changeSet id="009-create-db1" author="dev">
         <sql>
-            CREATE DATABASE IF NOT EXISTS database1;
-            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
+            CREATE DATABASE IF NOT EXISTS db1;
+            CREATE USER IF NOT EXISTS 'db1'@'%' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON db1.* TO 'db1'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'database1'@'%';
-            DROP DATABASE IF EXISTS database1;
+            DROP USER IF EXISTS 'db1'@'%';
+            DROP DATABASE IF EXISTS db1;
         </rollback>
     </changeSet> 
    
