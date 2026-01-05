@@ -48,30 +48,7 @@
     <changeSet id="006-database2-update-data" author="dev">
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
-  
-    <!-- Execute external SQL for tables and initial data -->
-    <changeSet id="007-database1-tables" author="dev">
-        <sqlFile path="../sql/database1/create_tables1.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-  
-    <!-- Execute external SQL to update some table data -->
-    <changeSet id="008-database1-update-data" author="dev">
-        <sqlFile path="../sql/database1/update_data1.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-    <changeSet id="009-create-db1" author="dev">
-        <sql>
-            CREATE DATABASE IF NOT EXISTS db1;
-            CREATE USER IF NOT EXISTS 'db1'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON db1.* TO 'db1'@'%';
-            FLUSH PRIVILEGES;
-        </sql>
-        <rollback>
-            DROP USER IF EXISTS 'db1'@'%';
-            DROP DATABASE IF EXISTS db1;
-        </rollback>
-    </changeSet> 
-   
+     
   
 
 </databaseChangeLog>
