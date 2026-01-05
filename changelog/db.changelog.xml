@@ -22,6 +22,25 @@
         </rollback>
     </changeSet>
 
+
+        <changeSet id="001-create-pocdb1" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS pocdb1;
+            CREATE USER IF NOT EXISTS 'pocuser1'@'ip-172-31-41-46.ec2.internal' IDENTIFIED BY 'Db1@12345';
+            <!-- GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal'; -->
+            GRANT ALL PRIVILEGES ON *.* TO 'pocuser1'@'ip-172-31-41-46.ec2.internal' WITH GRANT OPTION;
+
+            <!-- CREATE USER IF NOT EXISTS 'pocuser1'@'localhost' IDENTIFIED BY 'Db1@12345';
+            <!-- GRANT ALL PRIVILEGES ON pocdb1.* TO 'pocuser1'@'localhost'; --> -->
+
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'pocuser1'@'localhost';
+            DROP DATABASE IF EXISTS pocdb1;
+        </rollback>
+    </changeSet>
+
     <!-- Create db2 and user -->
     <changeSet id="002-create-database2" author="dev">
         <sql>
