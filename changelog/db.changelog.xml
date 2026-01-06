@@ -48,5 +48,27 @@
     <changeSet id="006-database2-update-data" author="dev">
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
+       <!-- Create db3 and user -->
+    <changeSet id="007-create-database3" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS database3;
+            CREATE USER IF NOT EXISTS 'database3'@'%' IDENTIFIED BY 'Db3@12345';
+            GRANT ALL PRIVILEGES ON database3.* TO 'database3'@'%';
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'database3'@'%';
+            DROP DATABASE IF EXISTS database3;
+        </rollback>
+     </changeSet>
+      
+     <changeSet id="008-database3-tables" author="dev">
+         <sqlFile path="../sql/database3/create_tables.sql" relativeToChangelogFile="true"/>
+     </changeSet>
+
+
+     <changeSet id="009-database3-update-data" author="dev">
+         <sqlFile path="../sql/database3/update_data.sql" relativeToChangelogFile="true"/>
+     </changeSet> 
 
 </databaseChangeLog>
