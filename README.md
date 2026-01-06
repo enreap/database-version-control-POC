@@ -41,11 +41,6 @@ Copy code
 liquibase --defaultsFile=liquibase.properties update
 Jenkins will run the pipeline automatically for CI/CD.
 
-yaml
-Copy code
-
----
-
 ✅ **Key Features of This GitHub Project**
 
 - Fully version-controlled using **Liquibase XML changelogs**.  
@@ -55,8 +50,4 @@ Copy code
 - Jenkins CI/CD pipeline ready.  
 - Clean, maintainable structure for users, tables, and procedures.  
 
----
 
-If you want, I can also **give a ready-to-push GitHub zip** including all these files, so you just unzip and push.  
-
-Do you want me to prepare that zip?
