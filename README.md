@@ -1,4 +1,4 @@
-# database-version-control-project
+# database-version-control-POC
 
 # My Database Project
 
